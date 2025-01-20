@@ -4,7 +4,6 @@
     "slug": "nusatech",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/Feather.png",
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
@@ -12,29 +11,13 @@
       "supportsTablet": true
     },
     "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/images/Feather.png",
-        "backgroundColor": "#ffffff"
-      },
       "package": "com.jasonevan.cobanusatech"
     },
     "web": {
       "bundler": "metro",
-      "output": "static",
-      "favicon": "./assets/images/favicon.png"
+      "output": "static"
     },
-    "plugins": [
-      "expo-router",
-      [
-        "expo-splash-screen",
-        {
-          "image": "./assets/images/splash-icon.png",
-          "imageWidth": 200,
-          "resizeMode": "contain",
-          "backgroundColor": "#ffffff"
-        }
-      ]
-    ],
+    "plugins": ["expo-router"],
     "experiments": {
       "typedRoutes": true
     },
@@ -43,8 +26,13 @@
         "origin": false
       },
       "eas": {
-        "projectId": "61d5bb54-f3c1-4fea-9984-cc941fa33518"
+        "projectId": "f8ec531e-177d-412e-b380-8f12bb3de38e"
       }
+    },
+    "splash": {
+      "image": "./assets/images/Feather.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
     }
   }
 }
