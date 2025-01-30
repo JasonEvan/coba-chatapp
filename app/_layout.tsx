@@ -29,6 +29,7 @@ export default function RootLayout() {
       <Stack.Screen name="(settings)" options={{ headerShown: false }} />
       <Stack.Screen name="add-chat" options={{ headerShown: false }} />
       <Stack.Screen name="chat/[name]" options={{ headerShown: false }} />
+      <Stack.Screen name="(auth)" options={{ headerShown: false }} />
     </Stack>
   );
 }

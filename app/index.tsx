@@ -1,51 +1,32 @@
-import {
-  Text,
-  View,
-  ImageBackground,
-  Image,
-  TouchableOpacity,
-} from "react-native";
-import { router } from "expo-router";
-import { StatusBar } from "expo-status-bar";
+import OnboardingModal from "@/components/OnboardingModal";
+import { useState } from "react";
+import { View, Text, ImageBackground, Image } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-export default function Index() {
+const Index = () => {
+  const [isModalVisible, setIsModalVisible] = useState(true);
+
   return (
     <ImageBackground
       source={require("../assets/images/Background.png")}
       className="flex-1"
-      resizeMode="cover"
+      resizeMode="contain"
     >
-      <SafeAreaView className="flex-1 justify-center items-center gap-y-14">
-        <View className="items-center">
+      <SafeAreaView className="flex-1 justify-center items-center">
+        <View className="items-center flex-1 justify-center">
           <Image source={require("../assets/images/Feather.png")} />
           <Text className="font-satoshib text-[26px] text-primary">
             Were Chatting
           </Text>
         </View>
-
-        <View className="gap-y-6">
-          <View>
-            <Text className="font-pbold text-center">
-              Selamat datang di Aplikasi
-            </Text>
-            <Text className="font-pbold text-center">Were Chating</Text>
-          </View>
-          <TouchableOpacity
-            className="rounded-xl w-72 flex flex-row items-center justify-center gap-x-5"
-            style={{ backgroundColor: "#F2F8FD" }}
-            onPress={() => router.push("/chat")}
-          >
-            <Image
-              source={require("../assets/images/Google Logo.png")}
-              className="w-5"
-              resizeMode="contain"
-            />
-            <Text className="font-satoshir">Lanjutkan Dengan Google</Text>
-          </TouchableOpacity>
-        </View>
+        <View className="flex-1"></View>
       </SafeAreaView>
-      <StatusBar style="auto" backgroundColor="black" />
+      <OnboardingModal
+        isModalVisible={isModalVisible}
+        onSkip={() => setIsModalVisible(false)}
+      />
     </ImageBackground>
   );
-}
+};
+
+export default Index;
